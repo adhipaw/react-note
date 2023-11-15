@@ -13,7 +13,7 @@ Pada tugas kali ini kalian akan diminta untuk melakukan improvement pada tugas A
 
 ### Menampilkan Daftar Catatan
 Pada daftar catatan:
-- menampilkan daftar catatan dengan data hardcode akan tetapi sudah mengaplikasikan Rendering list of data menggunakan array.map (data yang dihardcode berupa array dan arraynya disimpan menggunakan state management useState dari react)
+- menampilkan daftar catatan dengan data hardcode akan tetapi sudah mengaplikasikan Rendering list of data menggunakan array.map (data yang dihardcode berupa array dan arraynya disimpan menggunakan useState dari react)
 - menerapkan reusable component untuk tiap component pada daftar catatan.
 - data yang perlu ditampilkan meliputi Judul catatan (title), waktu pembuatan (createdAt) dan isi catatan (body)
 - menampilkan tombol delete catatan (bisa berupa icon / tombol dengan tulisan hapus) yang akan menghapus catatan berdasarakan id
@@ -21,17 +21,17 @@ Pada daftar catatan:
 
 ### Menampilkan Form untuk menambah catatan di Halaman Tambah Catatan
 Pada form untuk menambah catatan: 
-- Mengaplikasikan React Form, kemudian data sementara disimpan menggunakan state management useState
+- Mengaplikasikan React Form, kemudian data sementara disimpan ke useState
 - apabila data sudah di input dengan tombol submit dari event handler onSubmit akan menginput data sementara tadi kedalam Array hardcode buatan kalian
 - Implementasi useEffect agar setiap ada perubahan yang terjadi pada array data kalian akan merefresh halaman agar data yang baru bisa ter render alias tampil pada halaman Daftar Catatan
 - Implementasi Conditional Rendering pada tombol Submit, apabila judul catatan (title), dan isi catatan (body), belum diisi maka tombol Submit akan berwarna abu abu dan tidak bisa dilakukan Event Handler OnSubmit. apabila sudah Conditional Rendering akan membuat tombol abu abu tadi berubah warna dan bisa di klik, implementasikan useEffect dalam perubahan conditional rendering tersebut.
 
 ### Menampilkan Halaman Login
-- Mengaplikasikan React Form berisi input username dan password, kemudian data sementara disimpan menggunakan state management useState
+- Mengaplikasikan React Form berisi input username dan password, kemudian data sementara disimpan menggunakan useState
 - Melakukan hit api tiap kali button diklik ke endpoint login yg telah di sediakan untuk mendapatkan token auth yg akan digunakan untuk autentikasi bearer token.
   
 ### Menampilkan Halaman Register
-- Mengaplikasikan React Form berisi input username dan password, kemudian data sementara disimpan menggunakan state management useState
+- Mengaplikasikan React Form berisi input username dan password, kemudian data sementara disimpan menggunakan useState
 - Melakukan hit apitiap kali button diklik ke endpoint register yg telah di sediakan untuk mendapatkan token auth yg akan digunakan untuk autentikasi bearer token.
 
 ### Menjaga state user ketika sudah login dan tidak
