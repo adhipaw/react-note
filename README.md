@@ -4,14 +4,14 @@ Pada tugas kali ini kalian akan diminta untuk melakukan improvement pada tugas A
 
 ## Requirement
 
-### Terdapat 2 Halaman yaitu halaman Tambah Catatan, Home, Login. dan Register
+### Terdapat 4 Halaman yaitu halaman Tambah Catatan, Home, Login. dan Register
 - Terdapat halaman Tambah Catatan yang menggunakan react form dan sudah implement state management useState() untuk input title dan body nya
 - Terdapat halaman home yang menampilkan daftar catatan
 - Terdapat halaman Login untuk implementasikan authentication
 - Terdapat halaman Register untuk mendaftarkan akun
 - Mengaplikasian React Router Dom untuk navigasi antar halaman
 
-### Menampilkan Daftar Catatan
+### Menampilkan Daftar Catatan di Home
 Pada daftar catatan:
 - menampilkan daftar catatan dengan data hardcode akan tetapi sudah mengaplikasikan Rendering list of data menggunakan array.map (data yang dihardcode berupa array dan arraynya disimpan menggunakan useState dari react)
 - menerapkan reusable component untuk tiap component pada daftar catatan.
