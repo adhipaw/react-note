@@ -1,4 +1,4 @@
-# Aplikasi Catatan v2
+# Aplikasi Catatan v3
 
 Pada tugas kali ini kalian akan diminta untuk melakukan improvement pada tugas Aplikasi catatan v1 diubah menjadi Aplikasi catatan v2
 
