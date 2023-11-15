@@ -50,5 +50,5 @@ contoh: Ant Design, Bootstrap, Tailwind, Material UI dan lain-lain sesuai prefer
 ## Cara pengerjaan dan pengumpulan tugas
 Berikut cara pengerjaan dan pengumpulan tugas:
 - Diasumsikan kalian telah memiliki repository tugas Aplikasi Catatan dan tugas v2 telah berada pada branch <namakalian>_aplikasi_catatan_v2 
-- Ketika kalian telah selesai mengerjakan requirement, lakukan `git checkout -b nama_aplikasi_catatan_v3`. untuk membuat branch baru dengan nama extention v3 pada tugas kalian (NB: tugas v1 jangan diganggu lagi semua pengerjaan/ improvement dan requirement tugas baru hanya terjadi di v3)
+- Ketika kalian telah selesai mengerjakan requirement, lakukan `git checkout -b nama_aplikasi_catatan_v3`. untuk membuat branch baru dengan nama extention v3 pada tugas kalian (NB: tugas v2 jangan diganggu lagi semua pengerjaan/ improvement dan requirement tugas baru hanya terjadi di v3)
 - Terakhir, isi google form yang akan diberikan oleh mentor untuk pengumpulan tugas ini. (kalian akan diminta mengumpulkan link repo dan branch aplikasi catatan v3)
