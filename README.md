@@ -22,8 +22,8 @@ Pada daftar catatan:
 ### Menampilkan Form untuk menambah catatan di Halaman Tambah Catatan
 Pada form untuk menambah catatan: 
 - Mengaplikasikan React Form, kemudian data sementara disimpan ke useState
-- apabila data sudah di input dengan tombol submit dari event handler onSubmit akan menginput data sementara tadi kedalam Array hardcode buatan kalian
-- Implementasi useEffect agar setiap ada perubahan yang terjadi pada array data kalian akan merefresh halaman agar data yang baru bisa ter render alias tampil pada halaman Daftar Catatan
+- apabila data sudah di input dengan tombol submit dari event handler onSubmit
+- Implementasi useEffect agar setiap ada perubahan yang terjadi pada data kalian akan merefresh halaman agar data yang baru bisa ter render alias tampil pada halaman Daftar Catatan
 - Implementasi Conditional Rendering pada tombol Submit, apabila judul catatan (title), dan isi catatan (body), belum diisi maka tombol Submit akan berwarna abu abu dan tidak bisa dilakukan Event Handler OnSubmit. apabila sudah Conditional Rendering akan membuat tombol abu abu tadi berubah warna dan bisa di klik, implementasikan useEffect dalam perubahan conditional rendering tersebut.
 
 ### Menampilkan Halaman Login
