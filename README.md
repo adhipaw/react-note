@@ -35,8 +35,8 @@ Pada form untuk menambah catatan:
 - Melakukan hit apitiap kali button diklik ke endpoint register yg telah di sediakan untuk mendapatkan token auth yg akan digunakan untuk autentikasi bearer token.
 
 ### Menjaga state user ketika sudah login dan tidak
-- Ketika user belum login makan akan diarahkan ke halaman login/register
-- Ketika user belum login makan akan diarahkan ke halaman home
+- Ketika user belum login maka akan diarahkan ke halaman login/register
+- Ketika user belum login maka akan diarahkan ke halaman home
 - Terpadat fungsi untuk logout
 
 ### Menerapkan seluruh fungsional pada versi sebelumnya lalu diubah menjadi hit ke API
