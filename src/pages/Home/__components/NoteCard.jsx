@@ -3,14 +3,20 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 import { useContext } from "react";
 import { NotesContext } from "../../../App";
+import { deleteNote } from "../../../../network";
 
 const CardNote = ({ note, updateNote }) => {
   const notesContext = useContext(NotesContext);
 
   const ref = useRef(null);
 
-  const deleteNote = () => {
-    notesContext.setNotes(notesContext.notes.filter((n) => n.id !== note.id));
+  const deleteNoteHandler = async () => {
+    try {
+      await deleteNote(note.id);
+      notesContext.setNotes(notesContext.notes.filter((n) => n.id !== note.id));
+    } catch (error) {
+      alert(error.code);
+    }
   };
 
   return (
@@ -65,7 +71,7 @@ const CardNote = ({ note, updateNote }) => {
               className=" w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-blue-300  focus:ring-black"
               aria-label="edit note"
               role="button"
-              onClick={deleteNote}
+              onClick={deleteNoteHandler}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

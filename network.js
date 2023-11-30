@@ -28,7 +28,6 @@ async function login({ username, password }) {
   });
 
   const responseJson = await response.json();
-  console.log(responseJson);
   if (response.status >= 400) {
     alert(responseJson.msg);
     return { error: true, code: response.status, data: null };

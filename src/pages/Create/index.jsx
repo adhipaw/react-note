@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { NotesContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../App";
+import { addNote } from "../../../network";
 
 const CreateNotePage = () => {
   const [title, setTitle] = useState("");
@@ -11,6 +13,12 @@ const CreateNotePage = () => {
 
   const navigate = useNavigate();
   const notesContext = useContext(NotesContext);
+
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    if (!user) navigate("/login", { replace: true });
+  }, [navigate, user]);
 
   useEffect(() => {
     setDescriptionLength(description.length);
@@ -28,16 +36,22 @@ const CreateNotePage = () => {
     }
   }, [title, description, descriptionLength]);
 
-  const createNote = (e) => {
+  const createNote = async (e) => {
     e.preventDefault();
-    const newNote = {
-      id: notesContext.notes.length + 1,
-      title,
-      body: description,
-      createdAt: new Date(),
-    };
-    notesContext.setNotes([...notesContext.notes, newNote]);
-    navigate("/");
+
+    try {
+      const newNote = {
+        id: notesContext.notes.length + 1,
+        title,
+        body: description,
+        createdAt: new Date(),
+      };
+      await addNote({ title, body: description });
+      notesContext.setNotes([...notesContext.notes, newNote]);
+      navigate("/home");
+    } catch (error) {
+      alert(error.code);
+    }
   };
 
   return (

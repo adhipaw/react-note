@@ -1,7 +1,10 @@
 import NoteCard from "./__components/NoteCard";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { NotesContext } from "../../App";
+import { UserContext } from "../../App";
+import { useNavigate } from "react-router-dom";
+import { getNotes } from "../../../network";
 
 export const dummyNotes = [
   {
@@ -49,7 +52,24 @@ export const dummyNotes = [
 ];
 
 const NoteGrid = () => {
+  const navigate = useNavigate();
   const { notes, setNotes } = useContext(NotesContext);
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    if (!user) navigate("/login", { replace: true });
+
+    const fetchNotes = async () => {
+      try {
+        const res = await getNotes();
+        setNotes(res.data);
+      } catch (error) {
+        setNotes(dummyNotes);
+      }
+    };
+    fetchNotes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate, user]);
 
   const updateNote = (updatedNote) => {
     setNotes(
