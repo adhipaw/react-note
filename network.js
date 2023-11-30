@@ -36,13 +36,13 @@ async function login({ username, password }) {
   return { error: false, code: response.status, data: responseJson.data };
 }
 
-async function register({ user, password }) {
+async function register({ username, password }) {
   const response = await fetch(`${BASE_URL}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ user, password }),
+    body: JSON.stringify({ username, password }),
   });
 
   const responseJson = await response.json();

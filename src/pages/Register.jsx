@@ -11,7 +11,7 @@ export default function RegisterPage() {
 
     try {
       const response = await register({
-        user: user.username,
+        username: user.username,
         password: user.password,
       });
       if (response.code <= 400) {

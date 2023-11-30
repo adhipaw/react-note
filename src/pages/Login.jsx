@@ -15,14 +15,11 @@ export default function LoginPage() {
       const response = await login(user);
       if (response.code <= 400) {
         userContext.setUser({ username: user.username });
-        putAccessToken(response.data.access_token);
-        alert("register success");
+        putAccessToken(response.data.token);
+        alert("login success");
         navigate("/home");
       }
     } catch (error) {
-      //because api register is error
-      userContext.setUser({ username: "" });
-      navigate("/home");
       alert(error.code);
     }
   };

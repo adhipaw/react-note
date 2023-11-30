@@ -1,5 +1,5 @@
 import NoteCard from "./__components/NoteCard";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NotesContext } from "../../App";
 import { UserContext } from "../../App";
@@ -56,13 +56,15 @@ const NoteGrid = () => {
   const { notes, setNotes } = useContext(NotesContext);
   const { user } = useContext(UserContext);
 
+  const [filteredNotes, setFilteredNotes] = useState(notes);
+
   useEffect(() => {
     if (!user) navigate("/login", { replace: true });
 
     const fetchNotes = async () => {
       try {
         const res = await getNotes();
-        setNotes(res.data);
+        setNotes(res.data.length ? res.data : dummyNotes);
       } catch (error) {
         setNotes(dummyNotes);
       }
@@ -71,6 +73,10 @@ const NoteGrid = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate, user]);
 
+  useEffect(() => {
+    setFilteredNotes(notes);
+  }, [notes]);
+
   const updateNote = (updatedNote) => {
     setNotes(
       notes.map((note) => (note.id === updatedNote.id ? updatedNote : note))
@@ -78,8 +84,8 @@ const NoteGrid = () => {
   };
 
   const fileterNotes = (e) => {
-    if (e.target.value === "") return setNotes(notes);
-    setNotes(
+    if (e.target.value === "") return setFilteredNotes(notes);
+    setFilteredNotes(
       notes.filter((note) =>
         note.title.toLowerCase().includes(e.target.value.toLowerCase())
       )
@@ -141,7 +147,7 @@ const NoteGrid = () => {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-5 w-full h-full p-2">
-            {notes.map((note) => (
+            {filteredNotes.map((note) => (
               <NoteCard
                 key={note.id}
                 note={{ ...note, createdAt: new Date(note.createdAt) }}
